@@ -50,6 +50,8 @@ public class Particula implements Comparable<Particula> {
         }
 
     }
+
+    //tirar depois
     public double getpeso(){
         double p=0;
 
@@ -58,6 +60,7 @@ public class Particula implements Comparable<Particula> {
         }
         return p;
     }
+
     private void inicializarPosicao() {
 
         for (int i = 0; i < posicaoAtual.length; i++) {

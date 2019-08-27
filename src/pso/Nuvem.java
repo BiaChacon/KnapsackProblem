@@ -53,6 +53,8 @@ public class Nuvem {
 
     }
 
+    //fazer um print melhor
+
     private void resumoIteracao(int iteracao) {
         System.out.println("Iteracao " + iteracao + "| Melhor " + valorMelhorPosicaoNuvem);
     }

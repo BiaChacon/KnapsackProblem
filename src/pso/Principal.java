@@ -14,6 +14,7 @@ public class Principal {
 
         Nuvem nuvemParticulas = new Nuvem();
         nuvemParticulas.executarPSO();
+
         ArrayList<Integer> selecionados = nuvemParticulas.getMelhorSolucaoNuvem();
         System.out.println("------PROCESSO CONCLUIDO------");
 
