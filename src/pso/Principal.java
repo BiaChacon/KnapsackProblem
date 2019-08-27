@@ -1,7 +1,5 @@
 package pso;
 
-import java.util.ArrayList;
-
 public class Principal {
 
     public static final int nuItens = 10;
@@ -15,7 +13,6 @@ public class Principal {
         Nuvem nuvemParticulas = new Nuvem();
         nuvemParticulas.executarPSO();
 
-        ArrayList<Integer> selecionados = nuvemParticulas.getMelhorSolucaoNuvem();
         System.out.println("------PROCESSO CONCLUIDO------");
 
     }

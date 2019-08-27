@@ -5,11 +5,11 @@ import java.util.Arrays;
 
 public class Particula implements Comparable<Particula> {
 
-    static final double ALFA = 0.5; //inercia
-    static final double BETA = 2.05; //memoria
-    static final double GAMA = 2.05; //cooperacao
-    static final double VMAX = 6; //velocidade maxima
-    static final boolean VELCONTROL = true; //se controla ou nao a velocidade
+    static final double ALFA = 0.5;
+    static final double BETA = 2.05;
+    static final double GAMA = 2.05;
+    static final double VMAX = 6;
+    static final boolean VELCONTROL = true;
 
     private final int[] posicaoAtual;
     private double valorPosicaoAtual;
@@ -49,16 +49,6 @@ public class Particula implements Comparable<Particula> {
             return false;
         }
 
-    }
-
-    //tirar depois
-    public double getpeso(){
-        double p=0;
-
-        for (int i = 0; i < Principal.nuItens; i++) {
-            if (posicaoAtual[i] == 1) p += Principal.peso[i];
-        }
-        return p;
     }
 
     private void inicializarPosicao() {
@@ -154,12 +144,31 @@ public class Particula implements Comparable<Particula> {
         return melhorPosicao;
     }
 
+    //tirar depois
+    public double getpeso(){
+        double p=0;
+
+        for (int i = 0; i < Principal.nuItens; i++) {
+            if (posicaoAtual[i] == 1) p += Principal.peso[i];
+        }
+        return p;
+    }
+
+    public double getValor(){
+
+        double v=0;
+        for(int i=0; i<Principal.nuItens; i++){
+            if(posicaoAtual[i] == 1) v+=Principal.valor[i];
+        }
+        return v;
+    }
+
     @Override
     public String toString() {
         return "Particula{" +
                 "posicaoAtual=" + Arrays.toString(posicaoAtual) +
                 ", valorPosicaoAtual=" + valorPosicaoAtual +
-                '}'+"peso="+getpeso();
+                '}'+"peso="+getpeso()+"valor="+getValor();
     }
 
     @Override

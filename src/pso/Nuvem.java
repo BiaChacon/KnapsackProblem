@@ -48,15 +48,14 @@ public class Nuvem {
                 p.atualizarVelocidade();
                 p.atualizarPosicao();
             }
+            particulas.get(0).toString();
             resumoIteracao(i);
         }
 
     }
 
-    //fazer um print melhor
-
     private void resumoIteracao(int iteracao) {
-        System.out.println("Iteracao " + iteracao + "| Melhor " + valorMelhorPosicaoNuvem);
+        System.out.println("Iteracao " + iteracao + "| Melhor " + valorMelhorPosicaoNuvem+" "+particulas.get(0).toString());
     }
 
     public ArrayList<Integer> getMelhorSolucaoNuvem() {
