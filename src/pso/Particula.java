@@ -5,11 +5,11 @@ import java.util.Arrays;
 
 public class Particula implements Comparable<Particula> {
 
-    static final double ALFA = 0.5;
-    static final double BETA = 2.05;
-    static final double GAMA = 2.05;
-    static final double VMAX = 6;
-    static final boolean VELCONTROL = true;
+    static final double alfa = 0.5;
+    static final double beta = 2.05;
+    static final double gama = 2.05;
+    static final double vmax = 6;
+    static final boolean velControl = true;
 
     private final int[] posicaoAtual;
     private double valorPosicaoAtual;
@@ -69,17 +69,6 @@ public class Particula implements Comparable<Particula> {
         }
     }
 
-    public ArrayList<Integer> getAtributos() {
-        ArrayList<Integer> atributos = new ArrayList<>();
-        for (int i = 0; i < posicaoAtual.length; i++) {
-            if (posicaoAtual[i] == 0) {
-                atributos.add(i + 1);
-            }
-        }
-        return atributos;
-    }
-
-
     public void avaliarSolucao() {
 
         double v=0;
@@ -92,31 +81,33 @@ public class Particula implements Comparable<Particula> {
             valorMelhorPosicao = valorPosicaoAtual;
             System.arraycopy(posicaoAtual, 0, melhorPosicao, 0, posicaoAtual.length);
         }
-    }
 
-
-    public void setValorPosicaoAtual(double v) {
-        valorPosicaoAtual = v;
     }
 
     public void atualizarVelocidade() {
-        for (int i = 0; i < velocidade.length; i++) {
-            velocidade[i] = ALFA * velocidade[i]
-                    + BETA * Math.random() * (melhorPosicao[i] - posicaoAtual[i])
-                    + GAMA * Math.random() * (Nuvem.melhorPosicaoNuvem[i] - posicaoAtual[i]);
 
-            if (VELCONTROL) {
-                if (velocidade[i] > VMAX) {
-                    velocidade[i] = VMAX;
-                } else if (velocidade[i] < - VMAX) {
-                    velocidade[i] = - VMAX;
+        for (int i = 0; i < velocidade.length; i++) {
+
+            velocidade[i] = alfa * velocidade[i]
+                    + beta * Math.random() * (melhorPosicao[i] - posicaoAtual[i])
+                    + gama * Math.random() * (Nuvem.melhorPosicaoNuvem[i] - posicaoAtual[i]);
+
+            if (velControl) {
+                if (velocidade[i] > vmax) {
+                    velocidade[i] = vmax;
+                } else if (velocidade[i] < -vmax) {
+                    velocidade[i] = -vmax;
                 }
             }
+
         }
+
     }
 
     public void atualizarPosicao() {
+
         double s;
+
         do {
             for (int i = 0; i < posicaoAtual.length; i++) {
 
@@ -132,6 +123,22 @@ public class Particula implements Comparable<Particula> {
 
     }
 
+    public ArrayList<Integer> getAtributos() {
+
+        ArrayList<Integer> atributos = new ArrayList<>();
+        for (int i = 0; i < posicaoAtual.length; i++) {
+            if (posicaoAtual[i] == 0) {
+                atributos.add(i + 1);
+            }
+        }
+        return atributos;
+
+    }
+
+    public void setValorPosicaoAtual(double v) {
+        valorPosicaoAtual = v;
+    }
+
     public double getValorPosicaoAtual() {
         return valorPosicaoAtual;
     }
@@ -145,9 +152,8 @@ public class Particula implements Comparable<Particula> {
     }
 
     //tirar depois
-    public double getpeso(){
+    public double getPeso(){
         double p=0;
-
         for (int i = 0; i < Principal.nuItens; i++) {
             if (posicaoAtual[i] == 1) p += Principal.peso[i];
         }
@@ -155,7 +161,6 @@ public class Particula implements Comparable<Particula> {
     }
 
     public double getValor(){
-
         double v=0;
         for(int i=0; i<Principal.nuItens; i++){
             if(posicaoAtual[i] == 1) v+=Principal.valor[i];
@@ -165,14 +170,15 @@ public class Particula implements Comparable<Particula> {
 
     @Override
     public String toString() {
-        return "Particula{" +
-                "posicaoAtual=" + Arrays.toString(posicaoAtual) +
-                ", valorPosicaoAtual=" + valorPosicaoAtual +
-                '}'+"peso="+getpeso()+"valor="+getValor();
+        return "Particula{ " +
+                "posicaoAtual = " + Arrays.toString(posicaoAtual) +
+                ", valorPosicaoAtual = " + valorPosicaoAtual +
+                '}'+" Peso = "+getPeso()+" Valor = "+getValor();
     }
 
     @Override
     public int compareTo(Particula o) {
+
         if (valorMelhorPosicao != o.getValorMelhorPosicao()) {
             return valorMelhorPosicao.compareTo(o.getValorMelhorPosicao());
         } else {
@@ -180,6 +186,7 @@ public class Particula implements Comparable<Particula> {
             Integer anothertam = o.getAtributos().size();
             return thistam.compareTo(anothertam);
         }
+
     }
 
 }

@@ -10,13 +10,8 @@ public class Principal {
     public static final double knapsackMaxSize = 15;
 
     public static void main(String[] args) {
-
         Genetico ag = new Genetico();
         ag.executarAG();
-        System.out.println("------PROCESSO CONCLUIDO------");
-
     }
-
-
 
 }

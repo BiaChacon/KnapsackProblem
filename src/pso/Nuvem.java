@@ -23,6 +23,7 @@ public class Nuvem {
         }
 
         melhorPosicaoNuvem = new int[Principal.nuItens];
+
     }
 
 
@@ -48,24 +49,11 @@ public class Nuvem {
                 p.atualizarVelocidade();
                 p.atualizarPosicao();
             }
-            particulas.get(0).toString();
-            resumoIteracao(i);
+            System.out.println("Iteracao " + i + " " + particulas.get(0).toString());
+
         }
 
     }
 
-    private void resumoIteracao(int iteracao) {
-        System.out.println("Iteracao " + iteracao + "| Melhor " + valorMelhorPosicaoNuvem+" "+particulas.get(0).toString());
-    }
-
-    public ArrayList<Integer> getMelhorSolucaoNuvem() {
-        ArrayList<Integer> selecionados = new ArrayList<>();
-        for (int i = 0; i < melhorPosicaoNuvem.length; i++) {
-            if (melhorPosicaoNuvem[i] == 0) {
-                selecionados.add(i + 1);
-            }
-        }
-        return selecionados;
-    }
 
 }

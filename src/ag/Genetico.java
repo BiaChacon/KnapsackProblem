@@ -5,7 +5,6 @@ import java.util.Random;
 
 public final class Genetico {
 
-
     static final double taxaMutacao = 0.5;
     static final double taxaCrossover = 0.9;
     static final boolean eletismo = true;
@@ -21,10 +20,12 @@ public final class Genetico {
     private double melhorAptidaoAnterior;
 
     public Genetico() {
+
         r = new Random();
         populacao = new Populacao();
         contEstagnar = 0;
         melhorAptidaoAnterior = -1;
+
     }
 
     public void executarAG() {
@@ -50,7 +51,7 @@ public final class Genetico {
                 melhor = populacao.getIndividuo(0);
             }
 
-            System.out.println("Geracao " + geracao + "| Melhor: valor = " + melhor.getAptidao());
+            System.out.println("Geracao " + geracao + "| Melhor: Valor = " + melhor.getAptidao());
 
             if (estagna) {
                 contaEstagnacao();
@@ -60,9 +61,9 @@ public final class Genetico {
             }
 
         } while (geracao < numMaxGeracoes);
-        System.out.println("Geracao " + geracao + "| Melhor: valor = " + melhor);
 
-        System.out.println(populacao.getNumIndividuos());
+        System.out.println("Geracao " + geracao + "| Melhor: " + melhor);
+
     }
 
     public Populacao gerarPopulacao() {
@@ -98,6 +99,7 @@ public final class Genetico {
         }
 
         return pais;
+
     }
 
     public ArrayList<Individuo> cruzamento(ArrayList<Individuo> pais) {
@@ -129,12 +131,14 @@ public final class Genetico {
     }
 
     private void contaEstagnacao() {
+
         if (melhorAptidaoAnterior == -1 || populacao.getIndividuo(0).getAptidao() != melhorAptidaoAnterior) {
             melhorAptidaoAnterior = populacao.getIndividuo(0).getAptidao();
             contEstagnar = 1;
         } else {
             contEstagnar++;
         }
+
     }
 
     public Individuo getMelhor() {

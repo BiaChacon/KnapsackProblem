@@ -8,9 +8,11 @@ public class Populacao {
     private final ArrayList<Individuo> individuos = new ArrayList<>();
 
     public void iniciarPopulacao(int tamPop, int qtdItens) {
+
         for (int i = 0; i < tamPop; i++) {
             individuos.add(new Individuo(qtdItens));
         }
+
     }
 
     public void ordenarPopulacao() {
@@ -18,6 +20,7 @@ public class Populacao {
     }
 
     public void avaliarPopulacao() {
+
         for (Individuo i : individuos) {
             i.setAptidao(i.avaliar());
         }

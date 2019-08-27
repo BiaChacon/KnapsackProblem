@@ -12,10 +12,12 @@ public class Individuo implements Comparable<Individuo> {
     private Double aptidao;
 
     public Individuo(int qtdItens) {
+
         do {
             genes = new int[qtdItens];
             iniciarGenes();
         } while (!validar());
+
     }
 
     public double avaliar(){
@@ -26,6 +28,7 @@ public class Individuo implements Comparable<Individuo> {
             if (genes[i] == 1) apt += Principal.valor[i];
         }
         return apt;
+
     }
 
     public boolean validar(){
@@ -47,6 +50,7 @@ public class Individuo implements Comparable<Individuo> {
     public Individuo(int[] genes) {
 
         this.genes = genes;
+
         do {
             if (random.nextDouble() <= Genetico.taxaMutacao) {
                 int posAleatoria = random.nextInt(genes.length);
@@ -57,6 +61,7 @@ public class Individuo implements Comparable<Individuo> {
     }
 
     private void iniciarGenes() {
+
         for (int i = 0; i < genes.length; i++) {
             if (Math.random() < 0.5) {
                 genes[i] = 0;
@@ -64,17 +69,21 @@ public class Individuo implements Comparable<Individuo> {
                 genes[i] = 1;
             }
         }
+
     }
 
     private void mutacao(int posicao) {
+
         if (genes[posicao] == 1) {
             genes[posicao] = 0;
         } else {
             genes[posicao] = 1;
         }
+
     }
 
     public ArrayList<Integer> getAtributos() {
+
         ArrayList<Integer> atributos = new ArrayList<>();
         for (int i = 0; i < genes.length; i++) {
             if (genes[i] == 0) {
@@ -82,6 +91,7 @@ public class Individuo implements Comparable<Individuo> {
             }
         }
         return atributos;
+
     }
 
     public void setGenes(int[] genes) {
@@ -107,6 +117,6 @@ public class Individuo implements Comparable<Individuo> {
 
     @Override
     public String toString() {
-        return "cromossomes" + Arrays.toString(genes) + "aptidao" + aptidao;
+        return "Cromossomos = " + Arrays.toString(genes) + " Aptidao = " + aptidao;
     }
 }
