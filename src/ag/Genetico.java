@@ -60,7 +60,7 @@ public final class Genetico {
             }
 
         } while (geracao < numMaxGeracoes);
-        System.out.println("Geracao " + geracao + "| Melhor: valor = " + melhor.getAptidao());
+        System.out.println("Geracao " + geracao + "| Melhor: valor = " + melhor);
 
         System.out.println(populacao.getNumIndividuos());
     }

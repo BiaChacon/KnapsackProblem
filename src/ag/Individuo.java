@@ -1,6 +1,7 @@
 package ag;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 
@@ -44,12 +45,15 @@ public class Individuo implements Comparable<Individuo> {
     }
 
     public Individuo(int[] genes) {
+
         this.genes = genes;
-        //testa se deve fazer mutacao
-        if (random.nextDouble() <= Genetico.taxaMutacao) {
-            int posAleatoria = random.nextInt(genes.length); //define gene que sera mutado
-            mutacao(posAleatoria);
-        }
+        do {
+            if (random.nextDouble() <= Genetico.taxaMutacao) {
+                int posAleatoria = random.nextInt(genes.length);
+                mutacao(posAleatoria);
+            }
+        }while (!validar());
+
     }
 
     private void iniciarGenes() {
@@ -101,4 +105,8 @@ public class Individuo implements Comparable<Individuo> {
         return this.aptidao.compareTo(i.aptidao);
     }
 
+    @Override
+    public String toString() {
+        return "cromossomes" + Arrays.toString(genes) + "aptidao" + aptidao;
+    }
 }
