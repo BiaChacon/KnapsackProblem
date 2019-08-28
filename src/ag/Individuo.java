@@ -112,6 +112,14 @@ public class Individuo implements Comparable<Individuo> {
         return aptidao;
     }
 
+    public double getPeso(){
+        double p=0;
+
+        for (int i = 0; i < genes.length; i++) {
+            if (genes[i] == 1) p += Main.peso[i];
+        }
+        return p;
+    }
     @Override
     public int compareTo(Individuo i) {
         return this.aptidao.compareTo(i.aptidao);
@@ -119,6 +127,6 @@ public class Individuo implements Comparable<Individuo> {
 
     @Override
     public String toString() {
-        return "Cromossomos = " + Arrays.toString(genes) + " Aptidao = " + aptidao;
+        return "Cromossomos = " + Arrays.toString(genes) + " Aptidao = " + aptidao + "Peso = "+ getPeso();
     }
 }

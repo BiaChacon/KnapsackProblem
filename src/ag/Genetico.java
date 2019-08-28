@@ -53,14 +53,14 @@ public final class Genetico {
                 melhor = populacao.getIndividuo(0);
             }
 
-            System.out.println("Geracao " + geracao + "| Melhor: Valor = " + melhor.getAptidao());
+            System.out.println("Geracao " + geracao + "| Melhor: Valor = " + melhor);
 
-            if (estagna) {
+            /*if (estagna) {
                 contaEstagnacao();
                 if (contEstagnar >= valorEstagna) {
                     break;
                 }
-            }
+            }*/
 
         } while (geracao < numMaxGeracoes);
 

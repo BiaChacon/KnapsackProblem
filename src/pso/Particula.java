@@ -73,10 +73,10 @@ public class Particula implements Comparable<Particula> {
 
     public void avaliarSolucao() {
 
-        double v=0;
+        valorPosicaoAtual = 0;
 
         for(int i = 0; i< Main.nuItens; i++){
-            if(posicaoAtual[i] == 1) v+=Main.valor[i];
+            if(posicaoAtual[i] == 1) valorPosicaoAtual+=Main.valor[i];
         }
 
         if (valorPosicaoAtual > valorMelhorPosicao) {
@@ -153,11 +153,10 @@ public class Particula implements Comparable<Particula> {
         return melhorPosicao;
     }
 
-    //tirar depois
     public double getPeso(){
         double p=0;
         for (int i = 0; i < Main.nuItens; i++) {
-            if (posicaoAtual[i] == 1) p += Main.peso[i];
+            if (melhorPosicao[i] == 1) p += Main.peso[i];
         }
         return p;
     }
@@ -175,7 +174,7 @@ public class Particula implements Comparable<Particula> {
         return "Particula{ " +
                 "posicaoAtual = " + Arrays.toString(posicaoAtual) +
                 ", valorPosicaoAtual = " + valorPosicaoAtual +
-                '}'+" Peso = "+getPeso()+" Valor = "+getValor();
+                '}'+" Peso = "+getPeso();
     }
 
     @Override

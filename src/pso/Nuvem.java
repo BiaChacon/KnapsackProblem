@@ -3,6 +3,7 @@ package pso;
 import sample.Main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class Nuvem {
@@ -15,6 +16,8 @@ public class Nuvem {
     static int[] melhorPosicaoNuvem;
 
     private double valorMelhorPosicaoNuvem;
+
+    private double melhorPeso;
 
     public Nuvem() {
 
@@ -44,6 +47,7 @@ public class Nuvem {
 
             if (particulas.get(0).getValorMelhorPosicao() > valorMelhorPosicaoNuvem) {
                 valorMelhorPosicaoNuvem = particulas.get(0).getValorMelhorPosicao();
+                melhorPeso = particulas.get(0).getPeso();
                 System.arraycopy(particulas.get(0).getMelhorPosicao(), 0, melhorPosicaoNuvem, 0, melhorPosicaoNuvem.length);
             }
 
@@ -51,15 +55,10 @@ public class Nuvem {
                 p.atualizarVelocidade();
                 p.atualizarPosicao();
             }
-            System.out.println("Iteracao " + i + " " + particulas.get(0).toString());
+
+            System.out.println("Iteracao " + i + " valor melhor Partiicula " + valorMelhorPosicaoNuvem + "melhor particula"+ Arrays.toString(melhorPosicaoNuvem) + "peso"+ melhorPeso );
 
         }
-        /*
-        for (int i=0; i<particulas.size(); i++) {
-
-            System.out.println(particulas.get(i).getValorMelhorPosicao() + particulas.get(i).getValor());
-        }
-         */
 
     }
 
