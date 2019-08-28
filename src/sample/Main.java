@@ -14,6 +14,10 @@ public class Main extends Application {
     public static double[] peso;
     public static double knapsackMaxSize;
 
+    //Time
+
+
+
     /*
     1 2 4 1 1 6 8 2 9 10
     1 2 10 2 69 5 5 8 1 1

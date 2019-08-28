@@ -181,13 +181,13 @@ public class Particula implements Comparable<Particula> {
     @Override
     public int compareTo(Particula o) {
 
-        if (valorMelhorPosicao != o.getValorMelhorPosicao()) {
+        //if (valorMelhorPosicao != o.getValorMelhorPosicao()) {
             return valorMelhorPosicao.compareTo(o.getValorMelhorPosicao());
-        } else {
-            Integer thistam = this.getAtributos().size();
-            Integer anothertam = o.getAtributos().size();
-            return thistam.compareTo(anothertam);
-        }
+        //} else {
+        //    Integer thistam = this.getAtributos().size();
+        //    Integer anothertam = o.getAtributos().size();
+        //    return thistam.compareTo(anothertam);
+        //}
 
     }
 

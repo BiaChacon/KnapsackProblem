@@ -54,6 +54,12 @@ public class Nuvem {
             System.out.println("Iteracao " + i + " " + particulas.get(0).toString());
 
         }
+        /*
+        for (int i=0; i<particulas.size(); i++) {
+
+            System.out.println(particulas.get(i).getValorMelhorPosicao() + particulas.get(i).getValor());
+        }
+         */
 
     }
 
