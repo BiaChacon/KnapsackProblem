@@ -1,5 +1,7 @@
 package pso;
 
+import sample.Main;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -21,9 +23,9 @@ public class Particula implements Comparable<Particula> {
 
     public Particula() {
 
-        posicaoAtual = new int[Principal.nuItens];
-        melhorPosicao = new int[Principal.nuItens];
-        velocidade = new double[Principal.nuItens];
+        posicaoAtual = new int[Main.nuItens];
+        melhorPosicao = new int[Main.nuItens];
+        velocidade = new double[Main.nuItens];
 
         valorMelhorPosicao = new Double(0);
 
@@ -39,11 +41,11 @@ public class Particula implements Comparable<Particula> {
 
         double p=0;
 
-        for (int i = 0; i < Principal.nuItens; i++) {
-            if (posicaoAtual[i] == 1) p += Principal.peso[i];
+        for (int i = 0; i < Main.nuItens; i++) {
+            if (posicaoAtual[i] == 1) p += Main.peso[i];
         }
 
-        if(p <= Principal.knapsackMaxSize){
+        if(p <= Main.knapsackMaxSize){
             return true;
         }else{
             return false;
@@ -73,8 +75,8 @@ public class Particula implements Comparable<Particula> {
 
         double v=0;
 
-        for(int i=0; i<Principal.nuItens; i++){
-            if(posicaoAtual[i] == 1) v+=Principal.valor[i];
+        for(int i = 0; i< Main.nuItens; i++){
+            if(posicaoAtual[i] == 1) v+=Main.valor[i];
         }
 
         if (valorPosicaoAtual > valorMelhorPosicao) {
@@ -154,16 +156,16 @@ public class Particula implements Comparable<Particula> {
     //tirar depois
     public double getPeso(){
         double p=0;
-        for (int i = 0; i < Principal.nuItens; i++) {
-            if (posicaoAtual[i] == 1) p += Principal.peso[i];
+        for (int i = 0; i < Main.nuItens; i++) {
+            if (posicaoAtual[i] == 1) p += Main.peso[i];
         }
         return p;
     }
 
     public double getValor(){
         double v=0;
-        for(int i=0; i<Principal.nuItens; i++){
-            if(posicaoAtual[i] == 1) v+=Principal.valor[i];
+        for(int i=0; i<Main.nuItens; i++){
+            if(posicaoAtual[i] == 1) v+=Main.valor[i];
         }
         return v;
     }
@@ -188,5 +190,6 @@ public class Particula implements Comparable<Particula> {
         }
 
     }
+
 
 }

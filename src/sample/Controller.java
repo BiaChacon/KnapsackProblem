@@ -1,7 +1,6 @@
 package sample;
 
 import ag.Genetico;
-import ag.Principal;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -25,27 +24,31 @@ public class Controller {
     private void executarAG() {
 
         double knapsackMaxSize = Double.parseDouble(textKnapsackMaxSize.getText());
-        Principal.knapsackMaxSize = knapsackMaxSize;
+        Main.knapsackMaxSize = knapsackMaxSize;
 
         String[] arrayPeso = textPeso.getText().split(" ");
 
-        System.out.println(arrayPeso.length);
-        System.out.println(Principal.knapsackMaxSize);
+        for ( String i: arrayPeso ) {
+            System.out.println(i);
+        }
+        System.out.println(Main.knapsackMaxSize);
 
-        double[] peso = {};
+        double[] peso;
+        peso = new double[arrayPeso.length];
+
         for (int i = 0 ; i < arrayPeso.length; i++){
             peso[i] = Double.parseDouble(arrayPeso[i]);
         }
-        Principal.peso = peso;
+        Main.peso = peso;
 
         String[] arrayValor = textValor.getText().split(" ");
-        double[] valor = {};
+        double[] valor = new double[arrayPeso.length];
         for (int i = 0 ; i < arrayValor.length; i++){
             valor[i] = Double.parseDouble(arrayValor[i]);
         }
-        Principal.valor = valor;
+        Main.valor = valor;
 
-        Principal.nuItens = peso.length;
+        Main.nuItens = peso.length;
 
         Genetico ag = new Genetico();
         ag.executarAG();
@@ -53,6 +56,39 @@ public class Controller {
     }
 
     @FXML
-    private void executarPSO() {}
+    private void executarPSO() {
+
+        double knapsackMaxSize = Double.parseDouble(textKnapsackMaxSize.getText());
+        Main.knapsackMaxSize = knapsackMaxSize;
+
+        String[] arrayPeso = textPeso.getText().split(" ");
+
+        for ( String i: arrayPeso ) {
+            System.out.println(i);
+        }
+        System.out.println(Main.knapsackMaxSize);
+
+        double[] peso;
+        peso = new double[arrayPeso.length];
+
+        for (int i = 0 ; i < arrayPeso.length; i++){
+            peso[i] = Double.parseDouble(arrayPeso[i]);
+        }
+        Main.peso = peso;
+
+        String[] arrayValor = textValor.getText().split(" ");
+        double[] valor = new double[arrayPeso.length];
+        for (int i = 0 ; i < arrayValor.length; i++){
+            valor[i] = Double.parseDouble(arrayValor[i]);
+        }
+
+        Main.valor = valor;
+
+        Main.nuItens = peso.length;
+
+        Nuvem nuvemParticulas = new Nuvem();
+        nuvemParticulas.executarPSO();
+    }
 
 }
+

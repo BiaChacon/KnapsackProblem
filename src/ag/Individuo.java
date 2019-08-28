@@ -1,5 +1,7 @@
 package ag;
 
+import sample.Main;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -25,7 +27,7 @@ public class Individuo implements Comparable<Individuo> {
         double apt=0;
 
         for (int i = 0; i < genes.length; i++) {
-            if (genes[i] == 1) apt += Principal.valor[i];
+            if (genes[i] == 1) apt += Main.valor[i];
         }
         return apt;
 
@@ -36,10 +38,10 @@ public class Individuo implements Comparable<Individuo> {
         double p=0;
 
         for (int i = 0; i < genes.length; i++) {
-            if (genes[i] == 1) p += Principal.peso[i];
+            if (genes[i] == 1) p += Main.peso[i];
         }
 
-        if(p <= Principal.knapsackMaxSize){
+        if(p <= Main.knapsackMaxSize){
             return true;
         }else{
             return false;

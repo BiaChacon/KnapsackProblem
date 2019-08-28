@@ -1,5 +1,7 @@
 package pso;
 
+import sample.Main;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -22,7 +24,7 @@ public class Nuvem {
             particulas.add(new Particula());
         }
 
-        melhorPosicaoNuvem = new int[Principal.nuItens];
+        melhorPosicaoNuvem = new int[Main.nuItens];
 
     }
 

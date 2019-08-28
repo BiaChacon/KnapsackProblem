@@ -1,5 +1,7 @@
 package ag;
 
+import sample.Main;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -33,7 +35,7 @@ public final class Genetico {
         System.out.println("------EXECUTANDO AG------");
         int geracao = 0;
 
-        populacao.iniciarPopulacao(tamPopulacao, Principal.nuItens);
+        populacao.iniciarPopulacao(tamPopulacao, Main.nuItens);
         populacao.avaliarPopulacao();
         populacao.ordenarPopulacao();
         melhor = populacao.getIndividuo(0);
