@@ -7,6 +7,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import pso.Nuvem;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.MemoryUsage;
+
 public class Controller {
 
     @FXML
@@ -55,16 +58,15 @@ public class Controller {
         Main.nuItens = peso.length;
 
         Genetico ag = new Genetico();
-
         long startTime = System.nanoTime();
-
-
         ag.executarAG();
 
         long endTime = System.nanoTime();
         long timaElapsed = endTime - startTime;
         System.out.println(timaElapsed/1000000);
-        labelAG.setText("Tempo AG = "+ timaElapsed/1000000);
+
+        labelAG.setText("Tempo AG = "+ timaElapsed/1000000 + " milissegundos");
+
     }
 
     @FXML
@@ -101,7 +103,7 @@ public class Controller {
         long endTimeP = System.nanoTime();
         long timaElapsedP = endTimeP - startTimeP;
         System.out.println(timaElapsedP/1000000);
-        labelPSO.setText("Tempo PSO = "+ timaElapsedP/1000000);
+        labelPSO.setText("Tempo PSO = "+ timaElapsedP/1000000 + " milissegundos");
 
     }
 
