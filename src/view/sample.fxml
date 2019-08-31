@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="800.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Controller">
+   <top>
+      <AnchorPane prefHeight="77.0" prefWidth="1400.0" style="-fx-background-color: deepskyblue;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="77.0" prefWidth="1109.0" text="Knapsack Problem" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="723.0" prefWidth="1162.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btAG" layoutY="543.0" mnemonicParsing="false" onAction="#executarAG" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #00bfff;" text="AG" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+            <Button fx:id="btPSO" layoutX="178.0" layoutY="543.0" mnemonicParsing="false" onAction="#executarPSO" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #00bfff;" text="PSO" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+            <TextField fx:id="textPeso" layoutX="2.0" layoutY="405.0" prefHeight="40.0" prefWidth="340.0" />
+            <TextField fx:id="textValor" layoutX="2.0" layoutY="480.0" prefHeight="40.0" prefWidth="340.0" />
+            <TextField fx:id="textKnapsackMaxSize" layoutX="2.0" layoutY="243.0" prefHeight="40.0" prefWidth="340.0" />
+            <Label layoutX="1.0" layoutY="209.0" text="Capacidade total" textFill="DEEPSKYBLUE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label layoutX="5.0" layoutY="378.0" text="Peso[n]" textFill="DEEPSKYBLUE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label layoutX="2.0" layoutY="453.0" text="Valor[n]" textFill="DEEPSKYBLUE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label layoutX="2.0" layoutY="290.0" text="Quantidade de objetos" textFill="DEEPSKYBLUE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <AnchorPane layoutX="429.0" layoutY="106.0" prefHeight="157.0" prefWidth="658.0" style="-fx-background-color: white;">
+               <children>
+                  <Label fx:id="labelPSO" alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="5.0" prefHeight="177.0" prefWidth="643.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="433.0" layoutY="393.0" prefHeight="193.0" prefWidth="658.0" style="-fx-background-color: white;">
+               <children>
+                  <Label fx:id="labelAG" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="4.0" prefHeight="180.0" prefWidth="651.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <TextField fx:id="textNuObj" layoutX="2.0" layoutY="324.0" prefHeight="40.0" prefWidth="340.0" />
+            <ImageView fitHeight="172.0" fitWidth="440.0" layoutX="-38.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/1_CgW0UqojLoNF_CjnyKYkCg.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="673.0" layoutY="357.0" text="Solução com AG" textFill="DEEPSKYBLUE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="666.0" layoutY="71.0" text="Solução com PSO" textFill="DEEPSKYBLUE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btLimpar" layoutX="90.0" layoutY="635.0" mnemonicParsing="false" onAction="#limpar" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #00bfff;" text="LIMPAR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="24.0" fitWidth="17.0" layoutX="37.0" layoutY="555.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/play-button.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="17.0" layoutX="210.0" layoutY="555.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/play-button.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="723.0" prefWidth="59.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <AnchorPane prefHeight="723.0" prefWidth="45.0" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>

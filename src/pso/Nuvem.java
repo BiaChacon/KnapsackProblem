@@ -1,6 +1,6 @@
 package pso;
 
-import sample.Main;
+import main.Main;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,7 +33,7 @@ public class Nuvem {
 
 
 
-    public void executarPSO() {
+    public String executarPSO() {
 
         System.out.println("------EXECUTANDO PSO------");
 
@@ -59,7 +59,7 @@ public class Nuvem {
             System.out.println("Iteracao " + i + " valor melhor Partiicula " + valorMelhorPosicaoNuvem + "melhor particula"+ Arrays.toString(melhorPosicaoNuvem) + "peso"+ melhorPeso );
 
         }
-
+        return "Melhor particula = "+Arrays.toString(melhorPosicaoNuvem)+"\n"+"Valor = "+valorMelhorPosicaoNuvem+"\n"+"Peso = "+melhorPeso;
     }
 
 

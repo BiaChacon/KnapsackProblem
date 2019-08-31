@@ -1,6 +1,6 @@
 package pso;
 
-import sample.Main;
+import main.Main;
 
 import java.util.ArrayList;
 import java.util.Arrays;

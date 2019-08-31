@@ -1,19 +1,17 @@
-package sample;
+package control;
 
 import ag.Genetico;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import main.Main;
 import pso.Nuvem;
-
-import java.lang.management.ManagementFactory;
-import java.lang.management.MemoryUsage;
 
 public class Controller {
 
     @FXML
-    private Button btAG, btPSO;
+    private Button btAG, btPSO, btLimpar;
 
     @FXML
     private TextField textPeso;
@@ -21,6 +19,8 @@ public class Controller {
     @FXML
     private TextField textValor;
 
+    @FXML
+    private TextField textNuObj;
     @FXML
     private TextField textKnapsackMaxSize;
 
@@ -33,13 +33,11 @@ public class Controller {
         double knapsackMaxSize = Double.parseDouble(textKnapsackMaxSize.getText());
         Main.knapsackMaxSize = knapsackMaxSize;
 
+        int nuObj = Integer.parseInt(textNuObj.getText());
+        Main.nuItens = nuObj;
+
         String[] arrayPeso = textPeso.getText().split(",");
 
-        /*for ( String i: arrayPeso ) {
-            System.out.println(i);
-        }
-        System.out.println(Main.knapsackMaxSize);
-*/
         double[] peso;
         peso = new double[arrayPeso.length];
 
@@ -55,17 +53,15 @@ public class Controller {
         }
         Main.valor = valor;
 
-        Main.nuItens = peso.length;
-
         Genetico ag = new Genetico();
         long startTime = System.nanoTime();
-        ag.executarAG();
+        String resultado = ag.executarAG();
 
         long endTime = System.nanoTime();
         long timaElapsed = endTime - startTime;
         System.out.println(timaElapsed/1000000);
 
-        labelAG.setText("Tempo AG = "+ timaElapsed/1000000 + " milissegundos");
+        labelAG.setText("Tempo = "+ timaElapsed/1000000 + " milissegundos\n"+resultado);
 
     }
 
@@ -75,6 +71,9 @@ public class Controller {
         double knapsackMaxSize = Double.parseDouble(textKnapsackMaxSize.getText());
         Main.knapsackMaxSize = knapsackMaxSize;
 
+        int nuObj = Integer.parseInt(textNuObj.getText());
+        Main.nuItens = nuObj;
+
         String[] arrayPeso = textPeso.getText().split(",");
 
         double[] peso;
@@ -93,17 +92,28 @@ public class Controller {
 
         Main.valor = valor;
 
-        Main.nuItens = peso.length;
-
         long startTimeP = System.nanoTime();
 
         Nuvem nuvemParticulas = new Nuvem();
-        nuvemParticulas.executarPSO();
+        String resultado = nuvemParticulas.executarPSO();
 
         long endTimeP = System.nanoTime();
         long timaElapsedP = endTimeP - startTimeP;
         System.out.println(timaElapsedP/1000000);
-        labelPSO.setText("Tempo PSO = "+ timaElapsedP/1000000 + " milissegundos");
+
+        labelPSO.setText("Tempo = "+ timaElapsedP/1000000 + " milissegundos\n"+resultado);
+
+    }
+
+    @FXML
+    private void limpar(){
+
+        textValor.clear();
+        textPeso.clear();
+        textNuObj.clear();
+        textKnapsackMaxSize.clear();
+        labelAG.setText("");
+        labelPSO.setText("");
 
     }
 

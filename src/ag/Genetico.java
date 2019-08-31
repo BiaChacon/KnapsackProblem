@@ -1,8 +1,9 @@
 package ag;
 
-import sample.Main;
+import main.Main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public final class Genetico {
@@ -30,7 +31,7 @@ public final class Genetico {
 
     }
 
-    public void executarAG() {
+    public String executarAG() {
 
         System.out.println("------EXECUTANDO AG------");
         int geracao = 0;
@@ -65,6 +66,7 @@ public final class Genetico {
         } while (geracao < numMaxGeracoes);
 
         System.out.println("Geracao " + geracao + "| Melhor: " + melhor);
+        return "Cromossomos = "+Arrays.toString(melhor.getGenes())+"\nValor = "+melhor.getAptidao()+"\nPeso = "+ melhor.getPeso();
 
     }
 
