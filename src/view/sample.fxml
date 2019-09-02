@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="800.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Controller">
+<BorderPane prefHeight="800.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Controller">
    <top>
       <AnchorPane prefHeight="77.0" prefWidth="1400.0" style="-fx-background-color: deepskyblue;" BorderPane.alignment="CENTER">
          <children>
@@ -23,17 +23,17 @@
    <center>
       <AnchorPane prefHeight="723.0" prefWidth="1162.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btAG" layoutY="543.0" mnemonicParsing="false" onAction="#executarAG" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #00bfff;" text="AG" textFill="WHITE">
+            <Button fx:id="btAG" layoutX="1.0" layoutY="583.0" mnemonicParsing="false" onAction="#executarAG" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #00bfff;" text="AG" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Button>
-            <Button fx:id="btPSO" layoutX="178.0" layoutY="543.0" mnemonicParsing="false" onAction="#executarPSO" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #00bfff;" text="PSO" textFill="WHITE">
+            <Button fx:id="btPSO" layoutX="172.0" layoutY="583.0" mnemonicParsing="false" onAction="#executarPSO" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #00bfff;" text="PSO" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Button>
             <TextField fx:id="textPeso" layoutX="2.0" layoutY="405.0" prefHeight="40.0" prefWidth="340.0" />
-            <TextField fx:id="textValor" layoutX="2.0" layoutY="480.0" prefHeight="40.0" prefWidth="340.0" />
-            <TextField fx:id="textKnapsackMaxSize" layoutX="2.0" layoutY="243.0" prefHeight="40.0" prefWidth="340.0" />
+            <TextField fx:id="textValor" layoutX="2.0" layoutY="503.0" prefHeight="40.0" prefWidth="340.0" />
+            <TextField fx:id="textKnapsackMaxSize" layoutX="2.0" layoutY="236.0" prefHeight="40.0" prefWidth="340.0" />
             <Label layoutX="1.0" layoutY="209.0" text="Capacidade total" textFill="DEEPSKYBLUE">
                <font>
                   <Font name="System Bold" size="18.0" />
@@ -42,11 +42,11 @@
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>
-            <Label layoutX="2.0" layoutY="453.0" text="Valor[n]" textFill="DEEPSKYBLUE">
+            <Label layoutY="479.0" text="Valor[n]" textFill="DEEPSKYBLUE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>
-            <Label layoutX="2.0" layoutY="290.0" text="Quantidade de objetos" textFill="DEEPSKYBLUE">
+            <Label layoutX="2.0" layoutY="296.0" text="Quantidade de objetos" textFill="DEEPSKYBLUE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Label>
@@ -68,7 +68,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TextField fx:id="textNuObj" layoutX="2.0" layoutY="324.0" prefHeight="40.0" prefWidth="340.0" />
+            <TextField fx:id="textNuObj" layoutX="2.0" layoutY="322.0" prefHeight="40.0" prefWidth="340.0" />
             <ImageView fitHeight="172.0" fitWidth="440.0" layoutX="-38.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/1_CgW0UqojLoNF_CjnyKYkCg.png" />
@@ -84,21 +84,23 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Button fx:id="btLimpar" layoutX="90.0" layoutY="635.0" mnemonicParsing="false" onAction="#limpar" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #00bfff;" text="LIMPAR" textFill="WHITE">
+            <Button fx:id="btLimpar" layoutX="90.0" layoutY="669.0" mnemonicParsing="false" onAction="#limpar" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #00bfff;" text="LIMPAR" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <ImageView fitHeight="24.0" fitWidth="17.0" layoutX="37.0" layoutY="555.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="24.0" fitWidth="17.0" layoutX="35.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/play-button.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="17.0" layoutX="210.0" layoutY="555.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="24.0" fitWidth="17.0" layoutX="205.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/play-button.png" />
                </image>
             </ImageView>
+            <Label layoutX="5.0" layoutY="445.0" text="*Valores separados por virgula" textFill="RED" />
+            <Label layoutX="5.0" layoutY="543.0" text="*Valores separados por virgula" textFill="RED" />
          </children>
       </AnchorPane>
    </center>

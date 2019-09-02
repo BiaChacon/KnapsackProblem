@@ -66,7 +66,7 @@ public final class Genetico {
         } while (geracao < numMaxGeracoes);
 
         System.out.println("Geracao " + geracao + "| Melhor: " + melhor);
-        return "Cromossomos = "+Arrays.toString(melhor.getGenes())+"\nValor = "+melhor.getAptidao()+"\nPeso = "+ melhor.getPeso();
+        return "Cromossomo = "+Arrays.toString(melhor.getGenes())+"\nValor = "+melhor.getAptidao()+"\nPeso = "+ melhor.getPeso();
 
     }
 
