@@ -58,10 +58,13 @@ public class Controller {
         String resultado = ag.executarAG();
 
         long endTime = System.nanoTime();
-        long timaElapsed = endTime - startTime;
-        System.out.println(timaElapsed/1000000);
+        long timeElapsed = endTime - startTime;
+        System.out.println(timeElapsed/1000000);
 
-        labelAG.setText("Tempo = "+ timaElapsed/1000000 + " milissegundos\n"+resultado);
+        Runtime rt = Runtime.getRuntime();
+        String memory = "\nUso memória = "+(rt.totalMemory()-rt.freeMemory())/(1000*1000)+"M";
+        System.out.println(memory);
+        labelAG.setText("Tempo = "+ timeElapsed/1000000 + " milissegundos\n"+resultado+memory);
 
     }
 
@@ -98,10 +101,13 @@ public class Controller {
         String resultado = nuvemParticulas.executarPSO();
 
         long endTimeP = System.nanoTime();
-        long timaElapsedP = endTimeP - startTimeP;
-        System.out.println(timaElapsedP/1000000);
+        long timeElapsedP = endTimeP - startTimeP;
+        System.out.println(timeElapsedP/1000000);
 
-        labelPSO.setText("Tempo = "+ timaElapsedP/1000000 + " milissegundos\n"+resultado);
+        Runtime rt = Runtime.getRuntime();
+        String memory = "\nUso memória = "+(rt.totalMemory()-rt.freeMemory())/(1000*1000)+"M";
+        System.out.println(memory);
+        labelPSO.setText("Tempo = "+ timeElapsedP/1000000 + " milissegundos\n"+resultado+memory);
 
     }
 
